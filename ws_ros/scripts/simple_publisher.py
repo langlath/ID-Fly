@@ -40,6 +40,8 @@ class ImagePublisher(Node):
         # Used to convert between ROS and OpenCV images
         self.br = CvBridge()
 
+        # print("This is obviously bestest ROS2 node ever")
+
     def timer_callback(self):
         """
         Callback function.
@@ -120,6 +122,7 @@ def main(args=None):
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
     image_publisher.destroy_node()
+    # print("I will see you beautiful face in the next topic")
 
     # Shutdown the ROS client library for Python
     rclpy.shutdown()
