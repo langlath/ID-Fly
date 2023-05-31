@@ -10,7 +10,7 @@ The project uses a Raspberry Pi Zero W in order to get a video stream from a cam
 # Test RPi
 The RPi used for testing (and not mounted on the blimp) is a Zero W as well, with a default 32 bit Debian OS with bullseye. Its user name and password are novapi. When accessing it by ssh, you may want to precise you need to create opencv windows : 
 ```bash
-ssh novapi@<ip address>
+ssh -Y novapi@<ip address>
 ```
 When on the EMSE-INVITE Wifi network, ip address is often 192.168.164.40 or 192.168.41.
 
