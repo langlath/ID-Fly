@@ -3,7 +3,7 @@
 <package format="3">
   <name>depthai</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>This package proposes a simple publisher and subscriber to send and receive stream from a Luxonis camera</description>
   <maintainer email="thibault.langlard@ensta-bretagne.org">langlard</maintainer>
   <license>TODO: License declaration</license>
 
