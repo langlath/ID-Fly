@@ -1,3 +1,6 @@
 [submodule "ID-Fly_project_html"]
 	path = ID-Fly_project_html
 	url = https://github.com/langlath/ID-Fly_project_html.git
+[submodule "vrep/sim_ros2_interface"]
+	path = vrep/sim_ros2_interface
+	url = https://github.com/CoppeliaRobotics/simROS2.git
