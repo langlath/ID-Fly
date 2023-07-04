@@ -77,12 +77,12 @@ if __name__ == "__main__" :
     plt.title("Angular speed over time")
     plt.xlabel("Time (s)")
     plt.ylabel("Angular speed (rad/s)")
-    plt.show()
+    plt.pause(2)
 
     lis_filename = filename.split(".")
     filename2 = lis_filename[0] + "_converted." + lis_filename[1]
     file_write = open(filename2, "w")
-    file_write.write("rotation speed from file " + filename + "\n")
+    file_write.write("rotation speed from file " + filename + "\n\n")
     for i in range(len(lis_speed)):
         file_write.write(str(lis_times[i + 1]) + " " + str(lis_speed[i]) + "\n")
     file_write.close()
