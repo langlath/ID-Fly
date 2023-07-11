@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/langlard/ros2_ws/src/novabot/ws_ros/ros/install/setup.sh

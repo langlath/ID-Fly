@@ -1,0 +1,8 @@
+prefix=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/install
+
+Name: simu
+Description: Description of simu
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

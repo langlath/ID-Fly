@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<KinoveaVideoAnalysis>
+  <FormatVersion>2.0</FormatVersion>
+  <Producer>Kinovea.0.9.5</Producer>
+  <OriginalFilename>ascension1</OriginalFilename>
+  <FullPath>D:\ensta\semestre6\mesures\ascension1.MOV</FullPath>
+  <ImageSize>3840;2160</ImageSize>
+  <Mirror>false</Mirror>
+  <AverageTimeStampsPerFrame>3003</AverageTimeStampsPerFrame>
+  <CaptureFramerate>29.97002997003</CaptureFramerate>
+  <UserFramerate>29.97002997003</UserFramerate>
+  <FirstTimeStamp>0</FirstTimeStamp>
+  <SelectionStart>177177</SelectionStart>
+  <TimeOrigin>177177</TimeOrigin>
+  <Calibration>
+    <CalibrationLine>
+      <Length>5</Length>
+      <Segment>
+        <A>2086.736;1361.255</A>
+        <B>2115.906;1361.255</B>
+      </Segment>
+      <Origin>0;5</Origin>
+      <Axis>ImageAxes</Axis>
+    </CalibrationLine>
+    <CalibrationDrawingId>f1e753de-6067-41f8-85ac-ab21ccd90384</CalibrationDrawingId>
+    <Unit Abbreviation="cm">Centimeters</Unit>
+  </Calibration>
+  <Keyframes>
+    <Keyframe id="1aeac141-3382-4ab7-af3e-6f7f59bf0b65">
+      <Position UserTime="0.10">186186</Position>
+      <Title>0.10</Title>
+      <Drawings>
+        <Line id="f1e753de-6067-41f8-85ac-ab21ccd90384" name="Ligne 1">
+          <Start>2086.736;1361.255</Start>
+          <End>2094.767;1389.298</End>
+          <ExtraData>TotalDistance</ExtraData>
+          <MeasureLabel>
+            <SpacePosition>2070.751;1325.276</SpacePosition>
+            <TimePosition>0</TimePosition>
+          </MeasureLabel>
+          <DrawingStyle>
+            <Color Key="color">
+              <Value>255;255;127;0</Value>
+            </Color>
+            <LineSize Key="line size">
+              <Value>2</Value>
+            </LineSize>
+            <LineShape Key="line shape">
+              <Value>Solid</Value>
+            </LineShape>
+            <Arrows Key="arrows">
+              <Value>None</Value>
+            </Arrows>
+          </DrawingStyle>
+          <InfosFading>
+            <Enabled>true</Enabled>
+            <UseDefault>true</UseDefault>
+            <AlwaysVisible>false</AlwaysVisible>
+            <MasterFactor>1</MasterFactor>
+            <OpaqueFrames>1</OpaqueFrames>
+            <Frames>20</Frames>
+          </InfosFading>
+          <Measure UserLength="5,00" UserLengthInvariant="5.00" UserUnitLength="cm" />
+        </Line>
+      </Drawings>
+    </Keyframe>
+  </Keyframes>
+  <Tracks>
+    <Track id="9a1b9ed1-3106-4354-b2e5-d5342fa1bd07" name="Trajectoire 1">
+      <TimePosition>177177</TimePosition>
+      <Mode>Complete</Mode>
+      <ExtraData>Acceleration</ExtraData>
+      <Marker>Cross</Marker>
+      <DisplayBestFitCircle>false</DisplayBestFitCircle>
+      <TrackerParameters>
+        <SimilarityThreshold>0.5</SimilarityThreshold>
+        <TemplateUpdateThreshold>0.8</TemplateUpdateThreshold>
+        <RefinementNeighborhood>1</RefinementNeighborhood>
+        <SearchWindow>768;432</SearchWindow>
+        <BlockWindow>192;108</BlockWindow>
+      </TrackerParameters>
+      <TrackPointList Count="263" UserUnitLength="cm">
+        <TrackPoint UserX="3,17" UserXInvariant="3.17" UserY="-1,76" UserYInvariant="-1.76" UserTime="1.97">2105.211;1371.536;177177</TrackPoint>
+        <TrackPoint UserX="3,17" UserXInvariant="3.17" UserY="-1,59" UserYInvariant="-1.59" UserTime="2.00">2105.207;1370.532;180180</TrackPoint>
+        <TrackPoint UserX="3,00" UserXInvariant="3.00" UserY="-1,42" UserYInvariant="-1.42" UserTime="2.04">2104.211;1369.526;183183</TrackPoint>
+        <TrackPoint UserX="3,00" UserXInvariant="3.00" UserY="-1,08" UserYInvariant="-1.08" UserTime="2.07">2104.21;1367.531;186186</TrackPoint>
+        <TrackPoint UserX="2,99" UserXInvariant="2.99" UserY="-0,91" UserYInvariant="-0.91" UserTime="2.10">2104.205;1366.536;189189</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="-0,73" UserYInvariant="-0.73" UserTime="2.14">2103.208;1365.541;192192</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="-0,56" UserYInvariant="-0.56" UserTime="2.17">2103.207;1364.547;195195</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="-0,39" UserYInvariant="-0.39" UserTime="2.20">2103.204;1363.553;198198</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="-0,39" UserYInvariant="-0.39" UserTime="2.24">2103.201;1363.547;201201</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="-0,05" UserYInvariant="-0.05" UserTime="2.27">2103.197;1361.553;204204</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="-0,05" UserYInvariant="-0.05" UserTime="2.30">2103.195;1361.547;207207</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="0,12" UserYInvariant="0.12" UserTime="2.34">2103.193;1360.543;210210</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="0,29" UserYInvariant="0.29" UserTime="2.37">2103.191;1359.538;213213</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="0,47" UserYInvariant="0.47" UserTime="2.40">2103.188;1358.534;216216</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="0,64" UserYInvariant="0.64" UserTime="2.44">2103.184;1357.531;219219</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="0,81" UserYInvariant="0.81" UserTime="2.47">2103.179;1356.528;222222</TrackPoint>
+        <TrackPoint UserX="2,82" UserXInvariant="2.82" UserY="0,98" UserYInvariant="0.98" UserTime="2.50">2103.172;1355.523;225225</TrackPoint>
+        <TrackPoint UserX="2,65" UserXInvariant="2.65" UserY="1,32" UserYInvariant="1.32" UserTime="2.54">2102.176;1353.529;228228</TrackPoint>
+        <TrackPoint UserX="2,65" UserXInvariant="2.65" UserY="1,33" UserYInvariant="1.33" UserTime="2.57">2102.177;1353.522;231231</TrackPoint>
+        <TrackPoint UserX="2,65" UserXInvariant="2.65" UserY="1,67" UserYInvariant="1.67" UserTime="2.60">2102.177;1351.524;234234</TrackPoint>
+        <TrackPoint UserX="2,65" UserXInvariant="2.65" UserY="1,84" UserYInvariant="1.84" UserTime="2.64">2102.174;1350.521;237237</TrackPoint>
+        <TrackPoint UserX="2,65" UserXInvariant="2.65" UserY="2,18" UserYInvariant="2.18" UserTime="2.67">2102.17;1348.525;240240</TrackPoint>
+        <TrackPoint UserX="2,47" UserXInvariant="2.47" UserY="2,35" UserYInvariant="2.35" UserTime="2.70">2101.175;1347.523;243243</TrackPoint>
+        <TrackPoint UserX="2,48" UserXInvariant="2.48" UserY="2,70" UserYInvariant="2.70" UserTime="2.74">2101.179;1345.526;246246</TrackPoint>
+        <TrackPoint UserX="2,48" UserXInvariant="2.48" UserY="3,04" UserYInvariant="3.04" UserTime="2.77">2101.18;1343.531;249249</TrackPoint>
+        <TrackPoint UserX="2,48" UserXInvariant="2.48" UserY="3,21" UserYInvariant="3.21" UserTime="2.80">2101.178;1342.527;252252</TrackPoint>
+        <TrackPoint UserX="2,30" UserXInvariant="2.30" UserY="3,55" UserYInvariant="3.55" UserTime="2.84">2100.183;1340.524;255255</TrackPoint>
+        <TrackPoint UserX="2,31" UserXInvariant="2.31" UserY="3,90" UserYInvariant="3.90" UserTime="2.87">2100.184;1338.521;258258</TrackPoint>
+        <TrackPoint UserX="2,13" UserXInvariant="2.13" UserY="4,24" UserYInvariant="4.24" UserTime="2.90">2099.189;1336.518;261261</TrackPoint>
+        <TrackPoint UserX="2,13" UserXInvariant="2.13" UserY="4,75" UserYInvariant="4.75" UserTime="2.94">2099.189;1333.522;264264</TrackPoint>
+        <TrackPoint UserX="1,96" UserXInvariant="1.96" UserY="5,10" UserYInvariant="5.10" UserTime="2.97">2098.193;1331.522;267267</TrackPoint>
+        <TrackPoint UserX="1,96" UserXInvariant="1.96" UserY="5,44" UserYInvariant="5.44" UserTime="3.00">2098.19;1329.517;270270</TrackPoint>
+        <TrackPoint UserX="1,79" UserXInvariant="1.79" UserY="5,95" UserYInvariant="5.95" UserTime="3.04">2097.19;1326.518;273273</TrackPoint>
+        <TrackPoint UserX="1,62" UserXInvariant="1.62" UserY="6,47" UserYInvariant="6.47" UserTime="3.07">2096.193;1323.523;276276</TrackPoint>
+        <TrackPoint UserX="1,45" UserXInvariant="1.45" UserY="6,81" UserYInvariant="6.81" UserTime="3.10">2095.199;1321.519;279279</TrackPoint>
+        <TrackPoint UserX="1,45" UserXInvariant="1.45" UserY="7,33" UserYInvariant="7.33" UserTime="3.14">2095.195;1318.518;282282</TrackPoint>
+        <TrackPoint UserX="1,28" UserXInvariant="1.28" UserY="7,84" UserYInvariant="7.84" UserTime="3.17">2094.194;1315.519;285285</TrackPoint>
+        <TrackPoint UserX="1,11" UserXInvariant="1.11" UserY="8,35" UserYInvariant="8.35" UserTime="3.20">2093.194;1312.518;288288</TrackPoint>
+        <TrackPoint UserX="0,94" UserXInvariant="0.94" UserY="8,87" UserYInvariant="8.87" UserTime="3.24">2092.196;1309.519;291291</TrackPoint>
+        <TrackPoint UserX="0,76" UserXInvariant="0.76" UserY="9,38" UserYInvariant="9.38" UserTime="3.27">2091.199;1306.519;294294</TrackPoint>
+        <TrackPoint UserX="0,59" UserXInvariant="0.59" UserY="9,90" UserYInvariant="9.90" UserTime="3.30">2090.202;1303.517;297297</TrackPoint>
+        <TrackPoint UserX="0,42" UserXInvariant="0.42" UserY="10,41" UserYInvariant="10.41" UserTime="3.34">2089.206;1300.515;300300</TrackPoint>
+        <TrackPoint UserX="0,25" UserXInvariant="0.25" UserY="10,93" UserYInvariant="10.93" UserTime="3.37">2088.209;1297.511;303303</TrackPoint>
+        <TrackPoint UserX="0,08" UserXInvariant="0.08" UserY="11,44" UserYInvariant="11.44" UserTime="3.40">2087.211;1294.508;306306</TrackPoint>
+        <TrackPoint UserX="-0,09" UserXInvariant="-0.09" UserY="11,96" UserYInvariant="11.96" UserTime="3.44">2086.213;1291.502;309309</TrackPoint>
+        <TrackPoint UserX="-0,26" UserXInvariant="-0.26" UserY="12,64" UserYInvariant="12.64" UserTime="3.47">2085.214;1287.505;312312</TrackPoint>
+        <TrackPoint UserX="-0,43" UserXInvariant="-0.43" UserY="13,16" UserYInvariant="13.16" UserTime="3.50">2084.215;1284.506;315315</TrackPoint>
+        <TrackPoint UserX="-0,60" UserXInvariant="-0.60" UserY="13,67" UserYInvariant="13.67" UserTime="3.54">2083.214;1281.508;318318</TrackPoint>
+        <TrackPoint UserX="-0,78" UserXInvariant="-0.78" UserY="14,18" UserYInvariant="14.18" UserTime="3.57">2082.212;1278.507;321321</TrackPoint>
+        <TrackPoint UserX="-0,95" UserXInvariant="-0.95" UserY="14,70" UserYInvariant="14.70" UserTime="3.60">2081.209;1275.507;324324</TrackPoint>
+        <TrackPoint UserX="-1,12" UserXInvariant="-1.12" UserY="15,21" UserYInvariant="15.21" UserTime="3.64">2080.206;1272.505;327327</TrackPoint>
+        <TrackPoint UserX="-1,29" UserXInvariant="-1.29" UserY="15,73" UserYInvariant="15.73" UserTime="3.67">2079.201;1269.504;330330</TrackPoint>
+        <TrackPoint UserX="-1,63" UserXInvariant="-1.63" UserY="16,24" UserYInvariant="16.24" UserTime="3.70">2077.206;1266.502;333333</TrackPoint>
+        <TrackPoint UserX="-1,75" UserXInvariant="-1.75" UserY="16,79" UserYInvariant="16.79" UserTime="3.74">2076.504;1263.277;336336</TrackPoint>
+        <TrackPoint UserX="-1,98" UserXInvariant="-1.98" UserY="17,27" UserYInvariant="17.27" UserTime="3.77">2075.208;1260.499;339339</TrackPoint>
+        <TrackPoint UserX="-2,15" UserXInvariant="-2.15" UserY="17,78" UserYInvariant="17.78" UserTime="3.80">2074.205;1257.501;342342</TrackPoint>
+        <TrackPoint UserX="-2,32" UserXInvariant="-2.32" UserY="18,13" UserYInvariant="18.13" UserTime="3.84">2073.201;1255.497;345345</TrackPoint>
+        <TrackPoint UserX="-2,66" UserXInvariant="-2.66" UserY="18,64" UserYInvariant="18.64" UserTime="3.87">2071.205;1252.494;348348</TrackPoint>
+        <TrackPoint UserX="-2,83" UserXInvariant="-2.83" UserY="19,16" UserYInvariant="19.16" UserTime="3.90">2070.208;1249.492;351351</TrackPoint>
+        <TrackPoint UserX="-3,00" UserXInvariant="-3.00" UserY="19,67" UserYInvariant="19.67" UserTime="3.94">2069.21;1246.49;354354</TrackPoint>
+        <TrackPoint UserX="-3,18" UserXInvariant="-3.18" UserY="20,19" UserYInvariant="20.19" UserTime="3.97">2068.209;1243.495;357357</TrackPoint>
+        <TrackPoint UserX="-3,35" UserXInvariant="-3.35" UserY="20,53" UserYInvariant="20.53" UserTime="4.00">2067.207;1241.497;360360</TrackPoint>
+        <TrackPoint UserX="-3,52" UserXInvariant="-3.52" UserY="21,04" UserYInvariant="21.04" UserTime="4.04">2066.204;1238.498;363363</TrackPoint>
+        <TrackPoint UserX="-3,69" UserXInvariant="-3.69" UserY="21,56" UserYInvariant="21.56" UserTime="4.07">2065.201;1235.493;366366</TrackPoint>
+        <TrackPoint UserX="-3,86" UserXInvariant="-3.86" UserY="22,07" UserYInvariant="22.07" UserTime="4.10">2064.196;1232.491;369369</TrackPoint>
+        <TrackPoint UserX="-4,04" UserXInvariant="-4.04" UserY="22,58" UserYInvariant="22.58" UserTime="4.14">2063.189;1229.495;372372</TrackPoint>
+        <TrackPoint UserX="-4,14" UserXInvariant="-4.14" UserY="22,93" UserYInvariant="22.93" UserTime="4.17">2062.604;1227.497;375375</TrackPoint>
+        <TrackPoint UserX="-4,31" UserXInvariant="-4.31" UserY="23,27" UserYInvariant="23.27" UserTime="4.20">2061.602;1225.491;378378</TrackPoint>
+        <TrackPoint UserX="-4,48" UserXInvariant="-4.48" UserY="23,96" UserYInvariant="23.96" UserTime="4.24">2060.599;1221.497;381381</TrackPoint>
+        <TrackPoint UserX="-4,65" UserXInvariant="-4.65" UserY="24,30" UserYInvariant="24.30" UserTime="4.27">2059.596;1219.491;384384</TrackPoint>
+        <TrackPoint UserX="-4,82" UserXInvariant="-4.82" UserY="24,98" UserYInvariant="24.98" UserTime="4.30">2058.591;1215.497;387387</TrackPoint>
+        <TrackPoint UserX="-5,00" UserXInvariant="-5.00" UserY="25,50" UserYInvariant="25.50" UserTime="4.34">2057.586;1212.5;390390</TrackPoint>
+        <TrackPoint UserX="-5,17" UserXInvariant="-5.17" UserY="26,01" UserYInvariant="26.01" UserTime="4.37">2056.581;1209.505;393393</TrackPoint>
+        <TrackPoint UserX="-5,27" UserXInvariant="-5.27" UserY="26,53" UserYInvariant="26.53" UserTime="4.40">2055.994;1206.508;396396</TrackPoint>
+        <TrackPoint UserX="-5,51" UserXInvariant="-5.51" UserY="27,04" UserYInvariant="27.04" UserTime="4.44">2054.58;1203.504;399399</TrackPoint>
+        <TrackPoint UserX="-5,85" UserXInvariant="-5.85" UserY="27,72" UserYInvariant="27.72" UserTime="4.47">2052.585;1199.508;402402</TrackPoint>
+        <TrackPoint UserX="-6,02" UserXInvariant="-6.02" UserY="28,24" UserYInvariant="28.24" UserTime="4.50">2051.589;1196.512;405405</TrackPoint>
+        <TrackPoint UserX="-6,20" UserXInvariant="-6.20" UserY="28,75" UserYInvariant="28.75" UserTime="4.54">2050.593;1193.507;408408</TrackPoint>
+        <TrackPoint UserX="-6,37" UserXInvariant="-6.37" UserY="29,44" UserYInvariant="29.44" UserTime="4.57">2049.596;1189.505;411411</TrackPoint>
+        <TrackPoint UserX="-6,54" UserXInvariant="-6.54" UserY="30,12" UserYInvariant="30.12" UserTime="4.60">2048.598;1185.508;414414</TrackPoint>
+        <TrackPoint UserX="-6,71" UserXInvariant="-6.71" UserY="30,64" UserYInvariant="30.64" UserTime="4.64">2047.599;1182.504;417417</TrackPoint>
+        <TrackPoint UserX="-6,88" UserXInvariant="-6.88" UserY="31,33" UserYInvariant="31.33" UserTime="4.67">2046.599;1178.501;420420</TrackPoint>
+        <TrackPoint UserX="-7,05" UserXInvariant="-7.05" UserY="32,01" UserYInvariant="32.01" UserTime="4.70">2045.598;1174.498;423423</TrackPoint>
+        <TrackPoint UserX="-7,22" UserXInvariant="-7.22" UserY="32,87" UserYInvariant="32.87" UserTime="4.74">2044.596;1169.497;426426</TrackPoint>
+        <TrackPoint UserX="-7,40" UserXInvariant="-7.40" UserY="33,55" UserYInvariant="33.55" UserTime="4.77">2043.59;1165.496;429429</TrackPoint>
+        <TrackPoint UserX="-7,57" UserXInvariant="-7.57" UserY="34,24" UserYInvariant="34.24" UserTime="4.80">2042.585;1161.495;432432</TrackPoint>
+        <TrackPoint UserX="-7,91" UserXInvariant="-7.91" UserY="35,10" UserYInvariant="35.10" UserTime="4.84">2040.589;1156.499;435435</TrackPoint>
+        <TrackPoint UserX="-8,08" UserXInvariant="-8.08" UserY="35,78" UserYInvariant="35.78" UserTime="4.87">2039.594;1152.496;438438</TrackPoint>
+        <TrackPoint UserX="-8,25" UserXInvariant="-8.25" UserY="36,64" UserYInvariant="36.64" UserTime="4.90">2038.596;1147.494;441441</TrackPoint>
+        <TrackPoint UserX="-8,42" UserXInvariant="-8.42" UserY="37,50" UserYInvariant="37.50" UserTime="4.94">2037.599;1142.494;444444</TrackPoint>
+        <TrackPoint UserX="-8,59" UserXInvariant="-8.59" UserY="38,18" UserYInvariant="38.18" UserTime="4.97">2036.6;1138.49;447447</TrackPoint>
+        <TrackPoint UserX="-8,77" UserXInvariant="-8.77" UserY="39,04" UserYInvariant="39.04" UserTime="5.00">2035.6;1133.489;450450</TrackPoint>
+        <TrackPoint UserX="-8,94" UserXInvariant="-8.94" UserY="39,90" UserYInvariant="39.90" UserTime="5.04">2034.6;1128.489;453453</TrackPoint>
+        <TrackPoint UserX="-9,11" UserXInvariant="-9.11" UserY="40,76" UserYInvariant="40.76" UserTime="5.07">2033.598;1123.488;456456</TrackPoint>
+        <TrackPoint UserX="-9,28" UserXInvariant="-9.28" UserY="41,61" UserYInvariant="41.61" UserTime="5.10">2032.595;1118.489;459459</TrackPoint>
+        <TrackPoint UserX="-9,45" UserXInvariant="-9.45" UserY="42,47" UserYInvariant="42.47" UserTime="5.14">2031.59;1113.49;462462</TrackPoint>
+        <TrackPoint UserX="-9,62" UserXInvariant="-9.62" UserY="43,16" UserYInvariant="43.16" UserTime="5.17">2030.586;1109.485;465465</TrackPoint>
+        <TrackPoint UserX="-9,97" UserXInvariant="-9.97" UserY="44,18" UserYInvariant="44.18" UserTime="5.20">2028.592;1103.488;468468</TrackPoint>
+        <TrackPoint UserX="-9,97" UserXInvariant="-9.97" UserY="45,04" UserYInvariant="45.04" UserTime="5.24">2028.586;1098.491;471471</TrackPoint>
+        <TrackPoint UserX="-10,31" UserXInvariant="-10.31" UserY="45,90" UserYInvariant="45.90" UserTime="5.27">2026.591;1093.494;474474</TrackPoint>
+        <TrackPoint UserX="-10,31" UserXInvariant="-10.31" UserY="46,58" UserYInvariant="46.58" UserTime="5.30">2026.585;1089.489;477477</TrackPoint>
+        <TrackPoint UserX="-10,65" UserXInvariant="-10.65" UserY="47,44" UserYInvariant="47.44" UserTime="5.34">2024.59;1084.485;480480</TrackPoint>
+        <TrackPoint UserX="-10,82" UserXInvariant="-10.82" UserY="48,30" UserYInvariant="48.30" UserTime="5.37">2023.596;1079.482;483483</TrackPoint>
+        <TrackPoint UserX="-10,99" UserXInvariant="-10.99" UserY="49,16" UserYInvariant="49.16" UserTime="5.40">2022.6;1074.478;486486</TrackPoint>
+        <TrackPoint UserX="-11,16" UserXInvariant="-11.16" UserY="50,01" UserYInvariant="50.01" UserTime="5.44">2021.604;1069.476;489489</TrackPoint>
+        <TrackPoint UserX="-11,34" UserXInvariant="-11.34" UserY="50,87" UserYInvariant="50.87" UserTime="5.47">2020.608;1064.478;492492</TrackPoint>
+        <TrackPoint UserX="-11,51" UserXInvariant="-11.51" UserY="51,73" UserYInvariant="51.73" UserTime="5.50">2019.61;1059.482;495495</TrackPoint>
+        <TrackPoint UserX="-11,68" UserXInvariant="-11.68" UserY="52,41" UserYInvariant="52.41" UserTime="5.54">2018.613;1055.479;498498</TrackPoint>
+        <TrackPoint UserX="-11,85" UserXInvariant="-11.85" UserY="53,27" UserYInvariant="53.27" UserTime="5.57">2017.615;1050.48;501501</TrackPoint>
+        <TrackPoint UserX="-12,02" UserXInvariant="-12.02" UserY="54,13" UserYInvariant="54.13" UserTime="5.60">2016.616;1045.483;504504</TrackPoint>
+        <TrackPoint UserX="-12,19" UserXInvariant="-12.19" UserY="54,81" UserYInvariant="54.81" UserTime="5.64">2015.616;1041.482;507507</TrackPoint>
+        <TrackPoint UserX="-12,36" UserXInvariant="-12.36" UserY="55,67" UserYInvariant="55.67" UserTime="5.67">2014.616;1036.485;510510</TrackPoint>
+        <TrackPoint UserX="-12,53" UserXInvariant="-12.53" UserY="56,35" UserYInvariant="56.35" UserTime="5.70">2013.614;1032.481;513513</TrackPoint>
+        <TrackPoint UserX="-12,71" UserXInvariant="-12.71" UserY="57,21" UserYInvariant="57.21" UserTime="5.74">2012.611;1027.482;516516</TrackPoint>
+        <TrackPoint UserX="-12,88" UserXInvariant="-12.88" UserY="57,90" UserYInvariant="57.90" UserTime="5.77">2011.606;1023.478;519519</TrackPoint>
+        <TrackPoint UserX="-13,05" UserXInvariant="-13.05" UserY="58,76" UserYInvariant="58.76" UserTime="5.80">2010.601;1018.479;522522</TrackPoint>
+        <TrackPoint UserX="-13,39" UserXInvariant="-13.39" UserY="59,61" UserYInvariant="59.61" UserTime="5.84">2008.604;1013.484;525525</TrackPoint>
+        <TrackPoint UserX="-13,56" UserXInvariant="-13.56" UserY="60,30" UserYInvariant="60.30" UserTime="5.87">2007.606;1009.483;528528</TrackPoint>
+        <TrackPoint UserX="-13,74" UserXInvariant="-13.74" UserY="61,15" UserYInvariant="61.15" UserTime="5.90">2006.606;1004.487;531531</TrackPoint>
+        <TrackPoint UserX="-13,91" UserXInvariant="-13.91" UserY="61,84" UserYInvariant="61.84" UserTime="5.94">2005.603;1000.484;534534</TrackPoint>
+        <TrackPoint UserX="-14,08" UserXInvariant="-14.08" UserY="62,70" UserYInvariant="62.70" UserTime="5.97">2004.597;995.4855;537537</TrackPoint>
+        <TrackPoint UserX="-14,42" UserXInvariant="-14.42" UserY="63,55" UserYInvariant="63.55" UserTime="6.01">2002.601;990.4897;540540</TrackPoint>
+        <TrackPoint UserX="-14,59" UserXInvariant="-14.59" UserY="64,24" UserYInvariant="64.24" UserTime="6.04">2001.601;986.4874;543543</TrackPoint>
+        <TrackPoint UserX="-14,76" UserXInvariant="-14.76" UserY="65,10" UserYInvariant="65.10" UserTime="6.07">2000.598;981.4868;546546</TrackPoint>
+        <TrackPoint UserX="-15,11" UserXInvariant="-15.11" UserY="65,95" UserYInvariant="65.95" UserTime="6.11">1998.601;976.4883;549549</TrackPoint>
+        <TrackPoint UserX="-15,28" UserXInvariant="-15.28" UserY="66,81" UserYInvariant="66.81" UserTime="6.14">1997.601;971.4904;552552</TrackPoint>
+        <TrackPoint UserX="-15,45" UserXInvariant="-15.45" UserY="67,67" UserYInvariant="67.67" UserTime="6.17">1996.597;966.4926;555555</TrackPoint>
+        <TrackPoint UserX="-15,79" UserXInvariant="-15.79" UserY="68,52" UserYInvariant="68.52" UserTime="6.21">1994.601;961.493;558558</TrackPoint>
+        <TrackPoint UserX="-15,96" UserXInvariant="-15.96" UserY="69,38" UserYInvariant="69.38" UserTime="6.24">1993.6;956.4928;561561</TrackPoint>
+        <TrackPoint UserX="-16,14" UserXInvariant="-16.14" UserY="70,24" UserYInvariant="70.24" UserTime="6.27">1992.594;951.4907;564564</TrackPoint>
+        <TrackPoint UserX="-16,48" UserXInvariant="-16.48" UserY="71,27" UserYInvariant="71.27" UserTime="6.31">1990.593;945.4949;567567</TrackPoint>
+        <TrackPoint UserX="-16,82" UserXInvariant="-16.82" UserY="72,12" UserYInvariant="72.12" UserTime="6.34">1988.599;940.4937;570570</TrackPoint>
+        <TrackPoint UserX="-16,99" UserXInvariant="-16.99" UserY="73,15" UserYInvariant="73.15" UserTime="6.37">1987.6;934.4977;573573</TrackPoint>
+        <TrackPoint UserX="-17,17" UserXInvariant="-17.17" UserY="74,01" UserYInvariant="74.01" UserTime="6.41">1986.595;929.4953;576576</TrackPoint>
+        <TrackPoint UserX="-17,51" UserXInvariant="-17.51" UserY="75,04" UserYInvariant="75.04" UserTime="6.44">1984.595;923.4949;579579</TrackPoint>
+        <TrackPoint UserX="-17,85" UserXInvariant="-17.85" UserY="76,06" UserYInvariant="76.06" UserTime="6.47">1982.602;917.4974;582582</TrackPoint>
+        <TrackPoint UserX="-18,02" UserXInvariant="-18.02" UserY="77,09" UserYInvariant="77.09" UserTime="6.51">1981.602;911.5001;585585</TrackPoint>
+        <TrackPoint UserX="-18,36" UserXInvariant="-18.36" UserY="78,12" UserYInvariant="78.12" UserTime="6.54">1979.607;905.5016;588588</TrackPoint>
+        <TrackPoint UserX="-18,53" UserXInvariant="-18.53" UserY="79,15" UserYInvariant="79.15" UserTime="6.57">1978.606;899.5034;591591</TrackPoint>
+        <TrackPoint UserX="-18,88" UserXInvariant="-18.88" UserY="80,18" UserYInvariant="80.18" UserTime="6.61">1976.611;893.5038;594594</TrackPoint>
+        <TrackPoint UserX="-19,05" UserXInvariant="-19.05" UserY="81,21" UserYInvariant="81.21" UserTime="6.64">1975.609;887.5025;597597</TrackPoint>
+        <TrackPoint UserX="-19,39" UserXInvariant="-19.39" UserY="82,23" UserYInvariant="82.23" UserTime="6.67">1973.613;881.4982;600600</TrackPoint>
+        <TrackPoint UserX="-19,56" UserXInvariant="-19.56" UserY="83,43" UserYInvariant="83.43" UserTime="6.71">1972.61;874.4991;603603</TrackPoint>
+        <TrackPoint UserX="-19,90" UserXInvariant="-19.90" UserY="84,46" UserYInvariant="84.46" UserTime="6.74">1970.614;868.4972;606606</TrackPoint>
+        <TrackPoint UserX="-20,08" UserXInvariant="-20.08" UserY="85,66" UserYInvariant="85.66" UserTime="6.77">1969.609;861.5012;609609</TrackPoint>
+        <TrackPoint UserX="-20,42" UserXInvariant="-20.42" UserY="86,69" UserYInvariant="86.69" UserTime="6.81">1967.61;855.4995;612612</TrackPoint>
+        <TrackPoint UserX="-20,59" UserXInvariant="-20.59" UserY="87,89" UserYInvariant="87.89" UserTime="6.84">1966.605;848.5031;615615</TrackPoint>
+        <TrackPoint UserX="-20,93" UserXInvariant="-20.93" UserY="88,92" UserYInvariant="88.92" UserTime="6.87">1964.606;842.5029;618618</TrackPoint>
+        <TrackPoint UserX="-21,28" UserXInvariant="-21.28" UserY="90,12" UserYInvariant="90.12" UserTime="6.91">1962.613;835.5071;621621</TrackPoint>
+        <TrackPoint UserX="-21,45" UserXInvariant="-21.45" UserY="91,15" UserYInvariant="91.15" UserTime="6.94">1961.614;829.5059;624624</TrackPoint>
+        <TrackPoint UserX="-21,62" UserXInvariant="-21.62" UserY="92,35" UserYInvariant="92.35" UserTime="6.97">1960.611;822.509;627627</TrackPoint>
+        <TrackPoint UserX="-21,96" UserXInvariant="-21.96" UserY="93,37" UserYInvariant="93.37" UserTime="7.01">1958.615;816.5081;630630</TrackPoint>
+        <TrackPoint UserX="-22,13" UserXInvariant="-22.13" UserY="94,57" UserYInvariant="94.57" UserTime="7.04">1957.614;809.5117;633633</TrackPoint>
+        <TrackPoint UserX="-22,31" UserXInvariant="-22.31" UserY="95,60" UserYInvariant="95.60" UserTime="7.07">1956.608;803.5112;636636</TrackPoint>
+        <TrackPoint UserX="-22,65" UserXInvariant="-22.65" UserY="96,80" UserYInvariant="96.80" UserTime="7.11">1954.611;796.5149;639639</TrackPoint>
+        <TrackPoint UserX="-22,82" UserXInvariant="-22.82" UserY="97,83" UserYInvariant="97.83" UserTime="7.14">1953.611;790.5146;642642</TrackPoint>
+        <TrackPoint UserX="-22,99" UserXInvariant="-22.99" UserY="98,86" UserYInvariant="98.86" UserTime="7.17">1952.607;784.5116;645645</TrackPoint>
+        <TrackPoint UserX="-23,33" UserXInvariant="-23.33" UserY="100,06" UserYInvariant="100.06" UserTime="7.21">1950.613;777.5138;648648</TrackPoint>
+        <TrackPoint UserX="-23,50" UserXInvariant="-23.50" UserY="101,09" UserYInvariant="101.09" UserTime="7.24">1949.618;771.5125;651651</TrackPoint>
+        <TrackPoint UserX="-23,67" UserXInvariant="-23.67" UserY="102,12" UserYInvariant="102.12" UserTime="7.27">1948.62;765.5099;654654</TrackPoint>
+        <TrackPoint UserX="-23,85" UserXInvariant="-23.85" UserY="103,15" UserYInvariant="103.15" UserTime="7.31">1947.621;759.5056;657657</TrackPoint>
+        <TrackPoint UserX="-24,02" UserXInvariant="-24.02" UserY="104,35" UserYInvariant="104.35" UserTime="7.34">1946.62;752.5076;660660</TrackPoint>
+        <TrackPoint UserX="-24,19" UserXInvariant="-24.19" UserY="105,37" UserYInvariant="105.37" UserTime="7.37">1945.618;746.5084;663663</TrackPoint>
+        <TrackPoint UserX="-24,36" UserXInvariant="-24.36" UserY="106,40" UserYInvariant="106.40" UserTime="7.41">1944.616;740.5088;666666</TrackPoint>
+        <TrackPoint UserX="-24,53" UserXInvariant="-24.53" UserY="107,43" UserYInvariant="107.43" UserTime="7.44">1943.613;734.5072;669669</TrackPoint>
+        <TrackPoint UserX="-24,70" UserXInvariant="-24.70" UserY="108,46" UserYInvariant="108.46" UserTime="7.47">1942.611;728.5042;672672</TrackPoint>
+        <TrackPoint UserX="-24,88" UserXInvariant="-24.88" UserY="109,49" UserYInvariant="109.49" UserTime="7.51">1941.609;722.5007;675675</TrackPoint>
+        <TrackPoint UserX="-25,05" UserXInvariant="-25.05" UserY="110,52" UserYInvariant="110.52" UserTime="7.54">1940.607;716.4983;678678</TrackPoint>
+        <TrackPoint UserX="-25,22" UserXInvariant="-25.22" UserY="111,55" UserYInvariant="111.55" UserTime="7.57">1939.605;710.4949;681681</TrackPoint>
+        <TrackPoint UserX="-25,39" UserXInvariant="-25.39" UserY="112,58" UserYInvariant="112.58" UserTime="7.61">1938.603;704.491;684684</TrackPoint>
+        <TrackPoint UserX="-25,56" UserXInvariant="-25.56" UserY="113,77" UserYInvariant="113.77" UserTime="7.64">1937.601;697.4953;687687</TrackPoint>
+        <TrackPoint UserX="-25,73" UserXInvariant="-25.73" UserY="114,80" UserYInvariant="114.80" UserTime="7.67">1936.599;691.4996;690690</TrackPoint>
+        <TrackPoint UserX="-25,91" UserXInvariant="-25.91" UserY="115,83" UserYInvariant="115.83" UserTime="7.71">1935.597;685.5035;693693</TrackPoint>
+        <TrackPoint UserX="-26,08" UserXInvariant="-26.08" UserY="116,86" UserYInvariant="116.86" UserTime="7.74">1934.595;679.5067;696696</TrackPoint>
+        <TrackPoint UserX="-26,25" UserXInvariant="-26.25" UserY="117,89" UserYInvariant="117.89" UserTime="7.77">1933.593;673.509;699699</TrackPoint>
+        <TrackPoint UserX="-26,42" UserXInvariant="-26.42" UserY="118,91" UserYInvariant="118.91" UserTime="7.81">1932.591;667.5101;702702</TrackPoint>
+        <TrackPoint UserX="-26,59" UserXInvariant="-26.59" UserY="119,94" UserYInvariant="119.94" UserTime="7.84">1931.589;661.5102;705705</TrackPoint>
+        <TrackPoint UserX="-26,77" UserXInvariant="-26.77" UserY="120,97" UserYInvariant="120.97" UserTime="7.87">1930.585;655.5081;708708</TrackPoint>
+        <TrackPoint UserX="-26,94" UserXInvariant="-26.94" UserY="122,00" UserYInvariant="122.00" UserTime="7.91">1929.581;649.504;711711</TrackPoint>
+        <TrackPoint UserX="-27,11" UserXInvariant="-27.11" UserY="123,20" UserYInvariant="123.20" UserTime="7.94">1928.575;642.5062;714714</TrackPoint>
+        <TrackPoint UserX="-27,45" UserXInvariant="-27.45" UserY="124,23" UserYInvariant="124.23" UserTime="7.97">1926.578;636.5063;717717</TrackPoint>
+        <TrackPoint UserX="-27,62" UserXInvariant="-27.62" UserY="125,26" UserYInvariant="125.26" UserTime="8.01">1925.579;630.5029;720720</TrackPoint>
+        <TrackPoint UserX="-27,80" UserXInvariant="-27.80" UserY="126,46" UserYInvariant="126.46" UserTime="8.04">1924.577;623.502;723723</TrackPoint>
+        <TrackPoint UserX="-28,14" UserXInvariant="-28.14" UserY="127,66" UserYInvariant="127.66" UserTime="8.07">1922.583;616.5039;726726</TrackPoint>
+        <TrackPoint UserX="-28,31" UserXInvariant="-28.31" UserY="128,86" UserYInvariant="128.86" UserTime="8.11">1921.584;609.5071;729729</TrackPoint>
+        <TrackPoint UserX="-28,48" UserXInvariant="-28.48" UserY="129,89" UserYInvariant="129.89" UserTime="8.14">1920.582;603.5035;732732</TrackPoint>
+        <TrackPoint UserX="-28,82" UserXInvariant="-28.82" UserY="131,26" UserYInvariant="131.26" UserTime="8.17">1918.585;595.5084;735735</TrackPoint>
+        <TrackPoint UserX="-28,99" UserXInvariant="-28.99" UserY="132,29" UserYInvariant="132.29" UserTime="8.21">1917.584;589.5049;738738</TrackPoint>
+        <TrackPoint UserX="-29,17" UserXInvariant="-29.17" UserY="133,49" UserYInvariant="133.49" UserTime="8.24">1916.578;582.5018;741741</TrackPoint>
+        <TrackPoint UserX="-29,51" UserXInvariant="-29.51" UserY="134,69" UserYInvariant="134.69" UserTime="8.27">1914.577;575.4974;744744</TrackPoint>
+        <TrackPoint UserX="-29,85" UserXInvariant="-29.85" UserY="136,06" UserYInvariant="136.06" UserTime="8.31">1912.58;567.4983;747747</TrackPoint>
+        <TrackPoint UserX="-30,02" UserXInvariant="-30.02" UserY="137,26" UserYInvariant="137.26" UserTime="8.34">1911.577;560.4966;750750</TrackPoint>
+        <TrackPoint UserX="-30,37" UserXInvariant="-30.37" UserY="138,63" UserYInvariant="138.63" UserTime="8.38">1909.577;552.4993;753753</TrackPoint>
+        <TrackPoint UserX="-30,71" UserXInvariant="-30.71" UserY="139,83" UserYInvariant="139.83" UserTime="8.41">1907.581;545.4985;756756</TrackPoint>
+        <TrackPoint UserX="-30,88" UserXInvariant="-30.88" UserY="141,03" UserYInvariant="141.03" UserTime="8.44">1906.579;538.4949;759759</TrackPoint>
+        <TrackPoint UserX="-31,22" UserXInvariant="-31.22" UserY="142,40" UserYInvariant="142.40" UserTime="8.48">1904.579;530.4965;762762</TrackPoint>
+        <TrackPoint UserX="-31,57" UserXInvariant="-31.57" UserY="143,60" UserYInvariant="143.60" UserTime="8.51">1902.583;523.4946;765765</TrackPoint>
+        <TrackPoint UserX="-31,91" UserXInvariant="-31.91" UserY="144,97" UserYInvariant="144.97" UserTime="8.54">1900.589;515.4967;768768</TrackPoint>
+        <TrackPoint UserX="-32,08" UserXInvariant="-32.08" UserY="146,17" UserYInvariant="146.17" UserTime="8.58">1899.587;508.4949;771771</TrackPoint>
+        <TrackPoint UserX="-32,42" UserXInvariant="-32.42" UserY="147,54" UserYInvariant="147.54" UserTime="8.61">1897.587;500.4951;774774</TrackPoint>
+        <TrackPoint UserX="-32,76" UserXInvariant="-32.76" UserY="148,74" UserYInvariant="148.74" UserTime="8.64">1895.589;493.4908;777777</TrackPoint>
+        <TrackPoint UserX="-33,11" UserXInvariant="-33.11" UserY="150,11" UserYInvariant="150.11" UserTime="8.68">1893.592;485.4893;780780</TrackPoint>
+        <TrackPoint UserX="-33,45" UserXInvariant="-33.45" UserY="151,49" UserYInvariant="151.49" UserTime="8.71">1891.597;477.4936;783783</TrackPoint>
+        <TrackPoint UserX="-33,62" UserXInvariant="-33.62" UserY="152,69" UserYInvariant="152.69" UserTime="8.74">1890.593;470.4926;786786</TrackPoint>
+        <TrackPoint UserX="-33,96" UserXInvariant="-33.96" UserY="154,06" UserYInvariant="154.06" UserTime="8.78">1888.589;462.4933;789789</TrackPoint>
+        <TrackPoint UserX="-34,31" UserXInvariant="-34.31" UserY="155,26" UserYInvariant="155.26" UserTime="8.81">1886.588;455.4886;792792</TrackPoint>
+        <TrackPoint UserX="-34,65" UserXInvariant="-34.65" UserY="156,63" UserYInvariant="156.63" UserTime="8.84">1884.587;447.4861;795795</TrackPoint>
+        <TrackPoint UserX="-34,99" UserXInvariant="-34.99" UserY="158,00" UserYInvariant="158.00" UserTime="8.88">1882.586;439.4874;798798</TrackPoint>
+        <TrackPoint UserX="-35,34" UserXInvariant="-35.34" UserY="159,37" UserYInvariant="159.37" UserTime="8.91">1880.586;431.4911;801801</TrackPoint>
+        <TrackPoint UserX="-35,68" UserXInvariant="-35.68" UserY="160,57" UserYInvariant="160.57" UserTime="8.94">1878.588;424.4911;804804</TrackPoint>
+        <TrackPoint UserX="-36,02" UserXInvariant="-36.02" UserY="161,94" UserYInvariant="161.94" UserTime="8.98">1876.59;416.4939;807807</TrackPoint>
+        <TrackPoint UserX="-36,36" UserXInvariant="-36.36" UserY="163,14" UserYInvariant="163.14" UserTime="9.01">1874.593;409.4937;810810</TrackPoint>
+        <TrackPoint UserX="-36,71" UserXInvariant="-36.71" UserY="164,34" UserYInvariant="164.34" UserTime="9.04">1872.599;402.4929;813813</TrackPoint>
+        <TrackPoint UserX="-36,88" UserXInvariant="-36.88" UserY="165,54" UserYInvariant="165.54" UserTime="9.08">1871.595;395.4892;816816</TrackPoint>
+        <TrackPoint UserX="-37,22" UserXInvariant="-37.22" UserY="166,74" UserYInvariant="166.74" UserTime="9.11">1869.593;388.4855;819819</TrackPoint>
+        <TrackPoint UserX="-37,56" UserXInvariant="-37.56" UserY="168,11" UserYInvariant="168.11" UserTime="9.14">1867.594;380.4875;822822</TrackPoint>
+        <TrackPoint UserX="-37,91" UserXInvariant="-37.91" UserY="169,31" UserYInvariant="169.31" UserTime="9.18">1865.596;373.4898;825825</TrackPoint>
+        <TrackPoint UserX="-38,25" UserXInvariant="-38.25" UserY="170,51" UserYInvariant="170.51" UserTime="9.21">1863.601;366.491;828828</TrackPoint>
+        <TrackPoint UserX="-38,42" UserXInvariant="-38.42" UserY="171,71" UserYInvariant="171.71" UserTime="9.24">1862.597;359.4907;831831</TrackPoint>
+        <TrackPoint UserX="-38,76" UserXInvariant="-38.76" UserY="172,91" UserYInvariant="172.91" UserTime="9.28">1860.596;352.4894;834834</TrackPoint>
+        <TrackPoint UserX="-39,11" UserXInvariant="-39.11" UserY="174,11" UserYInvariant="174.11" UserTime="9.31">1858.598;345.4884;837837</TrackPoint>
+        <TrackPoint UserX="-39,45" UserXInvariant="-39.45" UserY="175,31" UserYInvariant="175.31" UserTime="9.34">1856.604;338.4871;840840</TrackPoint>
+        <TrackPoint UserX="-39,62" UserXInvariant="-39.62" UserY="176,51" UserYInvariant="176.51" UserTime="9.38">1855.602;331.4873;843843</TrackPoint>
+        <TrackPoint UserX="-39,96" UserXInvariant="-39.96" UserY="177,71" UserYInvariant="177.71" UserTime="9.41">1853.604;324.488;846846</TrackPoint>
+        <TrackPoint UserX="-40,13" UserXInvariant="-40.13" UserY="178,91" UserYInvariant="178.91" UserTime="9.44">1852.598;317.4899;849849</TrackPoint>
+        <TrackPoint UserX="-40,48" UserXInvariant="-40.48" UserY="180,11" UserYInvariant="180.11" UserTime="9.48">1850.597;310.4924;852852</TrackPoint>
+        <TrackPoint UserX="-40,82" UserXInvariant="-40.82" UserY="181,31" UserYInvariant="181.31" UserTime="9.51">1848.6;303.4947;855855</TrackPoint>
+        <TrackPoint UserX="-40,99" UserXInvariant="-40.99" UserY="182,34" UserYInvariant="182.34" UserTime="9.54">1847.598;297.4902;858858</TrackPoint>
+        <TrackPoint UserX="-41,33" UserXInvariant="-41.33" UserY="183,71" UserYInvariant="183.71" UserTime="9.58">1845.599;289.4944;861861</TrackPoint>
+        <TrackPoint UserX="-41,51" UserXInvariant="-41.51" UserY="184,74" UserYInvariant="184.74" UserTime="9.61">1844.594;283.4906;864864</TrackPoint>
+        <TrackPoint UserX="-41,85" UserXInvariant="-41.85" UserY="186,11" UserYInvariant="186.11" UserTime="9.64">1842.594;275.4955;867867</TrackPoint>
+        <TrackPoint UserX="-42,19" UserXInvariant="-42.19" UserY="187,14" UserYInvariant="187.14" UserTime="9.68">1840.598;269.4908;870870</TrackPoint>
+        <TrackPoint UserX="-42,36" UserXInvariant="-42.36" UserY="188,51" UserYInvariant="188.51" UserTime="9.71">1839.596;261.4944;873873</TrackPoint>
+        <TrackPoint UserX="-42,70" UserXInvariant="-42.70" UserY="189,71" UserYInvariant="189.71" UserTime="9.74">1837.599;254.4977;876876</TrackPoint>
+        <TrackPoint UserX="-42,88" UserXInvariant="-42.88" UserY="190,91" UserYInvariant="190.91" UserTime="9.78">1836.596;247.5002;879879</TrackPoint>
+        <TrackPoint UserX="-43,22" UserXInvariant="-43.22" UserY="192,11" UserYInvariant="192.11" UserTime="9.81">1834.596;240.4996;882882</TrackPoint>
+        <TrackPoint UserX="-43,56" UserXInvariant="-43.56" UserY="193,31" UserYInvariant="193.31" UserTime="9.84">1832.601;233.4964;885885</TrackPoint>
+        <TrackPoint UserX="-43,73" UserXInvariant="-43.73" UserY="194,68" UserYInvariant="194.68" UserTime="9.88">1831.599;225.5006;888888</TrackPoint>
+        <TrackPoint UserX="-44,08" UserXInvariant="-44.08" UserY="195,88" UserYInvariant="195.88" UserTime="9.91">1829.602;218.5011;891891</TrackPoint>
+        <TrackPoint UserX="-44,25" UserXInvariant="-44.25" UserY="197,08" UserYInvariant="197.08" UserTime="9.94">1828.598;211.4979;894894</TrackPoint>
+        <TrackPoint UserX="-44,59" UserXInvariant="-44.59" UserY="198,45" UserYInvariant="198.45" UserTime="9.98">1826.597;203.499;897897</TrackPoint>
+        <TrackPoint UserX="-44,93" UserXInvariant="-44.93" UserY="199,82" UserYInvariant="199.82" UserTime="10.01">1824.599;195.5038;900900</TrackPoint>
+        <TrackPoint UserX="-45,27" UserXInvariant="-45.27" UserY="201,02" UserYInvariant="201.02" UserTime="10.04">1822.604;188.5028;903903</TrackPoint>
+        <TrackPoint UserX="-45,45" UserXInvariant="-45.45" UserY="202,39" UserYInvariant="202.39" UserTime="10.08">1821.601;180.5056;906906</TrackPoint>
+        <TrackPoint UserX="-45,79" UserXInvariant="-45.79" UserY="203,59" UserYInvariant="203.59" UserTime="10.11">1819.602;173.5039;909909</TrackPoint>
+        <TrackPoint UserX="-46,13" UserXInvariant="-46.13" UserY="204,96" UserYInvariant="204.96" UserTime="10.14">1817.604;165.504;912912</TrackPoint>
+        <TrackPoint UserX="-46,30" UserXInvariant="-46.30" UserY="206,33" UserYInvariant="206.33" UserTime="10.18">1816.598;157.5068;915915</TrackPoint>
+        <TrackPoint UserX="-46,65" UserXInvariant="-46.65" UserY="207,53" UserYInvariant="207.53" UserTime="10.21">1814.595;150.5038;918918</TrackPoint>
+        <TrackPoint UserX="-46,99" UserXInvariant="-46.99" UserY="208,91" UserYInvariant="208.91" UserTime="10.24">1812.593;142.5031;921921</TrackPoint>
+        <TrackPoint UserX="-47,33" UserXInvariant="-47.33" UserY="210,28" UserYInvariant="210.28" UserTime="10.28">1810.593;134.5053;924924</TrackPoint>
+        <TrackPoint UserX="-47,68" UserXInvariant="-47.68" UserY="211,48" UserYInvariant="211.48" UserTime="10.31">1808.596;127.502;927927</TrackPoint>
+        <TrackPoint UserX="-48,02" UserXInvariant="-48.02" UserY="212,85" UserYInvariant="212.85" UserTime="10.34">1806.6;119.5023;930930</TrackPoint>
+        <TrackPoint UserX="-48,36" UserXInvariant="-48.36" UserY="214,22" UserYInvariant="214.22" UserTime="10.38">1804.606;111.5055;933933</TrackPoint>
+        <TrackPoint UserX="-48,53" UserXInvariant="-48.53" UserY="215,42" UserYInvariant="215.42" UserTime="10.41">1803.602;104.5048;936936</TrackPoint>
+        <TrackPoint UserX="-48,88" UserXInvariant="-48.88" UserY="216,79" UserYInvariant="216.79" UserTime="10.44">1801.6;96.50725;939939</TrackPoint>
+        <TrackPoint UserX="-49,22" UserXInvariant="-49.22" UserY="217,99" UserYInvariant="217.99" UserTime="10.48">1799.599;89.50648;942942</TrackPoint>
+        <TrackPoint UserX="-49,56" UserXInvariant="-49.56" UserY="219,36" UserYInvariant="219.36" UserTime="10.51">1797.598;81.51051;945945</TrackPoint>
+        <TrackPoint UserX="-49,90" UserXInvariant="-49.90" UserY="220,56" UserYInvariant="220.56" UserTime="10.54">1795.599;74.51179;948948</TrackPoint>
+        <TrackPoint UserX="-50,25" UserXInvariant="-50.25" UserY="221,76" UserYInvariant="221.76" UserTime="10.58">1793.6;67.51035;951951</TrackPoint>
+        <TrackPoint UserX="-50,59" UserXInvariant="-50.59" UserY="223,13" UserYInvariant="223.13" UserTime="10.61">1791.602;59.51487;954954</TrackPoint>
+        <TrackPoint UserX="-50,93" UserXInvariant="-50.93" UserY="224,39" UserYInvariant="224.39" UserTime="10.64">1789.606;52.19411;957957</TrackPoint>
+        <TrackPoint UserX="-51,22" UserXInvariant="-51.22" UserY="225,41" UserYInvariant="225.41" UserTime="10.68">1787.901;46.23712;960960</TrackPoint>
+        <TrackPoint UserX="-51,52" UserXInvariant="-51.52" UserY="226,97" UserYInvariant="226.97" UserTime="10.71">1786.197;37.13077;963963</TrackPoint>
+      </TrackPointList>
+      <MainLabel Text="Trajectoire 1">
+        <SpacePosition>2085.211;1321.536</SpacePosition>
+        <TimePosition>0</TimePosition>
+      </MainLabel>
+      <KeyframeLabelList Count="1">
+        <KeyframeLabel>
+          <SpacePosition>2084.21;1317.531</SpacePosition>
+          <TimePosition>186186</TimePosition>
+        </KeyframeLabel>
+      </KeyframeLabelList>
+      <DrawingStyle>
+        <Color Key="color">
+          <Value>255;139;0;139</Value>
+        </Color>
+        <LineSize Key="line size">
+          <Value>3</Value>
+        </LineSize>
+        <TrackShape Key="track shape">
+          <Value>Solid;false</Value>
+        </TrackShape>
+      </DrawingStyle>
+    </Track>
+  </Tracks>
+  <CoordinateSystem id="3affcd33-d76a-42bb-aeda-a59c76c45735" name="Repère de coordonnées 1">
+    <Visible>false</Visible>
+    <DrawingStyle>
+      <Color Key="line color">
+        <Value>255;255;0;0</Value>
+      </Color>
+    </DrawingStyle>
+  </CoordinateSystem>
+  <Trackability />
+</KinoveaVideoAnalysis>
