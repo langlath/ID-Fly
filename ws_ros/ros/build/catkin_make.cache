@@ -1,0 +1,2 @@
+simu
+-DCATKIN_DEVEL_PREFIX=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/devel -DCMAKE_INSTALL_PREFIX=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/install -G Unix Makefiles
