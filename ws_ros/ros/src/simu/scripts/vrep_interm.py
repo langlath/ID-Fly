@@ -20,6 +20,7 @@ class Blimp:
     self.speed_yaw = 0.
 
     self.target = [0, 0]
+    self.size_img = [0, 0]
     self.pos_cam = [0, 0, 0]
     self.pos_head = [0, 0, 0]
 
@@ -56,6 +57,8 @@ def callback_img(data):
   hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
   # # Find coordinates of target in the picture  
+  # Red is tricky because its hue value is 0 as well as 360
+  # if encountering problem, can use cv2.COLOR_BGR2RGB tu search for blue instead
   lower_red = np.array([0,50,50])
   upper_red = np.array([20,255,255])
 
@@ -71,12 +74,12 @@ def callback_img(data):
   array = np.array(res[:, :, 2])
   tri = np.argwhere(array > 0)
 
-  if tri.size != np.array([]):
-    target = (np.mean(tri[0]), np.mean(tri[1]))
+  if tri.size != 0:
+    target = [np.mean(tri[0]), np.mean(tri[1])]
   else : 
-    target = (0, 0)
-  # print(target)
-  # print(array)
+    target = [0, 0]
+  blimp.target = target
+  blimp.size_img = [len(res), len(res[0])]
 
   # Display image
   cv2.namedWindow("camera", cv2.WINDOW_NORMAL)
@@ -116,17 +119,30 @@ if __name__ == "__main__":
   subscriber_pos_camera = rospy.Subscriber("/camera", Vector3, callback_pos_camera)
   subscriber_pos_head = rospy.Subscriber("/head", Vector3, callback_pos_head)
   publisher_dist = rospy.Publisher("/dist_head", Float64)
+  publisher_target = rospy.Publisher("/pos_target", Float64MultiArray)
 
   publisher_speed = rospy.Publisher("/speed_blimp", Float64MultiArray)
   r = rospy.Rate(10)
+
   while not rospy.is_shutdown():
+      # actualise Blimp with Euler method
       blimp.actualise()
+
+      # publish the speed for vrep
       speed_msg = Float64MultiArray()
       speed_msg.layout = MultiArrayLayout()
       speed_msg.data = blimp.speed + [blimp.speed_yaw]
       publisher_speed.publish(speed_msg)
 
+      # publish distance of camera to head for control
       dist_msg = Float64()
       dist_msg.data = np.sqrt((blimp.pos_head[0] - blimp.pos_cam[0])**2 + (blimp.pos_head[1] - blimp.pos_cam[1])**2 + (blimp.pos_head[2] - blimp.pos_cam[2])**2)
       publisher_dist.publish(dist_msg)
+
+      # publish position of head in the image
+      target_msg = Float64MultiArray()
+      target_msg.layout = MultiArrayLayout()
+      target_msg.data = blimp.target + blimp.size_img
+      publisher_target.publish(target_msg)
+
       r.sleep()
