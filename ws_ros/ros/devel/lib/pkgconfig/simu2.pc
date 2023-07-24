@@ -1,0 +1,8 @@
+prefix=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/devel
+
+Name: simu2
+Description: Description of simu2
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

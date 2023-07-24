@@ -483,6 +483,12 @@ rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
 sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
 
 //Value Computed by CMake
+simu2_BINARY_DIR:STATIC=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/build/simu2
+
+//Value Computed by CMake
+simu2_SOURCE_DIR:STATIC=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu2
+
+//Value Computed by CMake
 simu_BINARY_DIR:STATIC=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/build/simu
 
 //Value Computed by CMake
@@ -490,6 +496,12 @@ simu_SOURCE_DIR:STATIC=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
+
+//Value Computed by CMake
+test_BINARY_DIR:STATIC=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/build/simu2
+
+//Value Computed by CMake
+test_SOURCE_DIR:STATIC=/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu2
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake

@@ -52,3 +52,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/simu" TYPE FILE FILES "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/simu" TYPE PROGRAM FILES "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/build/simu/catkin_generated/installspace/simple_publisher.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/simu" TYPE PROGRAM FILES "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/build/simu/catkin_generated/installspace/simple_subscriber.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/simu" TYPE PROGRAM FILES "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/build/simu/catkin_generated/installspace/vrep_interm.py")
+endif()
+
