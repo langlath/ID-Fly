@@ -1,14 +1,21 @@
 function pos_callback(msg)
-    blimp = sim.getObject('/Blimp')
+    -- blimp = sim.getObject('/Blimp')
     pos = sim.getObjectPosition(blimp, -1)
+    orient = sim.getObjectOrientation(blimp, -1)
+    yaw, pitch, roll = sim.alphaBetaGammaToYawPitchRoll(orient[1], orient[2], orient[3])
     data = msg['data']
     -- print(pos[1], data[1])
-    print(pos)
+    -- print('yaw = ', yaw)
     new_pos = {0, 0, 0}
-    new_pos[1] = pos[1] + 0.1 * data[1]
-    new_pos[2] = pos[2] + 0.1 * data[2]
-    new_pos[3] = pos[3] + 0.1 * data[3]
+    new_pos[2] = pos[2] + dt * (data[2] * math.cos(yaw + math.pi / 2) + data[1] * math.sin(yaw + math.pi / 2))
+    new_pos[1] = pos[1] + dt * (data[1] * math.cos(yaw + math.pi / 2) + data[2] * math.sin(yaw + math.pi / 2))
+    new_pos[3] = pos[3] + dt * data[3]
     sim.setObjectPosition(blimp, -1, new_pos)
+
+    yaw = yaw + dt * data[4]
+    new_alpha, new_beta, new_gamma = sim.yawPitchRollToAlphaBetaGamma(yaw, pitch, roll)
+    new_orient = {new_alpha, new_beta, new_gamma}
+    sim.setObjectOrientation(blimp, -1, new_orient)
 end
 
 
@@ -23,9 +30,10 @@ function sysCall_init()
     publisher_position_head = simROS.advertise('/head', 'geometry_msgs/Vector3')
     publisher_position_blimp = simROS.advertise('/blimp', 'geometry_msgs/Vector3')
     simROS.publisherTreatUInt8ArrayAsString(publisher_image) -- treat uint8 arrays as strings (much faster, tables/arrays are kind of slow in Lua) 
-    
-    
+        
     subscriber_speed_blimp = simROS.subscribe('/speed_blimp', 'std_msgs/Float64MultiArray', 'pos_callback')
+
+    dt = 0.1
 end
  
 function sysCall_sensing()
@@ -62,6 +70,7 @@ function sysCall_sensing()
     blimp_msg['y'] = pos_blimp[2]
     blimp_msg['z'] = pos_blimp[3]
     simROS.publish(publisher_position_blimp, blimp_msg)
+
 end
  
 function sysCall_cleanup()
@@ -71,5 +80,5 @@ function sysCall_cleanup()
     simROS.shutdownPublisher(publisher_position_head)
     simROS.shutdownPublisher(publisher_position_blimp)
 
-    simROS.shtudownSubscriber(subscriber_speed_blimp)
+    simROS.shutdownSubscriber(subscriber_speed_blimp)
 end

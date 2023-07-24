@@ -15,7 +15,7 @@ import numpy as np
 class Blimp:
 
   def __init__(self):
-    self.pos = [0., 0., 0.]
+    # self.pos = [0., 0., 0.]
     self.speed = [0., 0., 0.]
     self.yaw = 0.
     self.speed_yaw = 0.
@@ -32,39 +32,39 @@ class Blimp:
     self.Dpsi = 0.5
     self.m = 0.6
 
-    self.dt = 0.01
+    self.dt = 0.1
 
-  @property
-  def x(self):
-    return self.pos[0]
+  # @property
+  # def x(self):
+  #   return self.pos[0]
 
-  @x.setter
-  def x(self, new_x):
-    self.pos[0] = new_x
+  # @x.setter
+  # def x(self, new_x):
+  #   self.pos[0] = new_x
 
-  @property
-  def y(self):
-    return self.pos[1]
+  # @property
+  # def y(self):
+  #   return self.pos[1]
   
-  @y.setter
-  def y(self, new_y):
-    self.pos[0] = new_y
+  # @y.setter
+  # def y(self, new_y):
+  #   self.pos[0] = new_y
 
   
-  @property
-  def z(self):
-    return self.pos[2]
+  # @property
+  # def z(self):
+  #   return self.pos[2]
   
-  @z.setter
-  def z(self, new_z):
-    self.pos[0] = new_z
+  # @z.setter
+  # def z(self, new_z):
+  #   self.pos[0] = new_z
 
 
   def actualise(self):
-    self.x += self.speed[0] * self.dt
-    self.y += self.speed[1] * self.dt
-    self.z += self.speed[2] * self.dt
-    self.yaw += self.speed_yaw * self.dt
+    # self.x += self.speed[0] * self.dt
+    # self.y += self.speed[1] * self.dt
+    # self.z += self.speed[2] * self.dt
+    # self.yaw += self.speed_yaw * self.dt
 
     # print("self.speed_x avant", self.speed[0])
     self.speed[0] = self.speed[0] + (self.forward_prop - self.Dvx / self.m  * self.speed[0] + self.speed_yaw * self.speed[1]) * self.dt
@@ -84,19 +84,43 @@ def callback_img(data):
    
   # Convert ROS Image message to OpenCV image
   frame = br.imgmsg_to_cv2(data)
+  frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+  hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-  # Find coordinates of target in the picture
-  lis_x_head = []
-  lis_y_head = []
-  for i in range(len(frame)):
-    for j in range(len(frame[0])):
-      if frame[i][j][0] >= 100 and frame[i][j][0] > 2 * max(frame[i][j][1], frame[i][j][2]):
-        lis_x_head.append(i)
-        lis_y_head.append(j)
-  x_head = np.mean(np.array(lis_x_head))
-  y_head = np.mean(np.array(lis_y_head))
+  # # Find coordinates of target in the picture
+  # lis_x_head = []
+  # lis_y_head = []
+  # for i in range(len(frame)):
+  #   for j in range(len(frame[0])):
+  #     if frame[i][j][0] >= 100 and frame[i][j][0] > 2 * max(frame[i][j][1], frame[i][j][2]):
+  #       lis_x_head.append(i)
+  #       lis_y_head.append(j)
+  # x_head = np.mean(np.array(lis_x_head))
+  # y_head = np.mean(np.array(lis_y_head))
   # print(x_head, y_head)
   # print(len(frame), len(frame[0]))
+  
+  lower_red = np.array([0,50,50])
+  upper_red = np.array([20,255,255])
+
+  # Here we are defining range of bluecolor in HSV
+  # This creates a mask of blue coloured 
+  # objects found in the frame.
+  mask = cv2.inRange(hsv, lower_red, upper_red)
+
+  # The bitwise and of the frame and mask is done so 
+  # that only the blue coloured objects are highlighted 
+  # and stored in res
+  res = cv2.bitwise_and(frame,frame, mask= mask)
+  array = np.array(res[:, :, 2])
+  tri = np.argwhere(array > 0)
+
+  if tri.size != np.array([]):
+    target = (np.mean(tri[0]), np.mean(tri[1]))
+  else : 
+    target = (0, 0)
+  print(target)
+  # print(array)
 
   # Display image
   cv2.namedWindow("camera", cv2.WINDOW_NORMAL)
@@ -120,11 +144,11 @@ if __name__ == "__main__":
   subscriber_pos = rospy.Subscriber("/blimp", Vector3, callback_pos)
   subscriber_forward_prop = rospy.Subscriber("/forward_prop", Float64, callback_forward_prop)
   publisher_speed = rospy.Publisher("/speed_blimp", Float64MultiArray)
-  r = rospy.Rate(100)
+  r = rospy.Rate(10)
   while not rospy.is_shutdown():
       blimp.actualise()
       msg = Float64MultiArray()
       msg.layout = MultiArrayLayout()
-      msg.data = blimp.speed
+      msg.data = blimp.speed + [blimp.speed_yaw]
       publisher_speed.publish(msg)
       r.sleep()
