@@ -1,5 +1,4 @@
 function pos_callback(msg)
-    -- blimp = sim.getObject('/Blimp')
     pos = sim.getObjectPosition(blimp, -1)
     orient = sim.getObjectOrientation(blimp, -1)
     yaw, pitch, roll = sim.alphaBetaGammaToYawPitchRoll(orient[1], orient[2], orient[3])

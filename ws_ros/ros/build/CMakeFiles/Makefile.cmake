@@ -18,6 +18,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/CMakeLists.txt"
   "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu/CMakeLists.txt"
   "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu/package.xml"
+  "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu/scripts/control.py"
   "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu/scripts/simple_publisher.py"
   "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu/scripts/simple_subscriber.py"
   "/home/langlard/ros2_ws/src/novabot/ws_ros/ros/src/simu/scripts/vrep_interm.py"

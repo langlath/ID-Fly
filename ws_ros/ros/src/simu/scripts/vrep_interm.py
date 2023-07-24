@@ -28,9 +28,14 @@ class Blimp:
     self.side_top_prop = 0
     self.side_bottom_prop = 0
     self.alt_prop = 0
+    self.k_f = 0.5
+    self.k_st = 0.5
+    self.k_sb = 0.5
+    self.k_a = 0.5
 
     self.Dvx = 0.5
     self.Dvy = 0.5
+    self.Dvz = 0.5
     self.Dpsi = 0.5
     self.m = 0.6
 
@@ -38,9 +43,10 @@ class Blimp:
 
 
   def actualise(self):
-    self.speed[0] = self.speed[0] + (self.forward_prop - self.Dvx / self.m  * self.speed[0] + self.speed_yaw * self.speed[1]) * self.dt
-    self.speed[1] +=  (self.side_top_prop - self.side_bottom_prop - self.Dvy / self.m  * self.speed[1] - self.speed_yaw * self.speed[0]) * self.dt
-    self.speed_yaw += (self.side_top_prop + self.side_bottom_prop - self.Dpsi * self.speed_yaw)
+    self.speed[0] = self.speed[0] + (self.forward_prop * self.k_f - self.Dvx / self.m * self.speed[0] - self.speed_yaw * self.speed[1]) * self.dt
+    self.speed[1] = self.speed[1] + (self.side_top_prop * self.k_st - self.side_bottom_prop * self.k_sb - self.Dvy / self.m * self.speed[1] + self.speed_yaw * self.speed[0]) * self.dt
+    self.speed[2] = self.speed[2] + (self.alt_prop * self.k_a - self.Dvz / self.m * self.speed[2]) * self.dt
+    self.speed_yaw = self.speed_yaw + (self.side_top_prop * self.k_st + self.side_bottom_prop * self.k_sb - self.Dpsi * self.speed_yaw) * self.dt
 
 
 def callback_img(data):
@@ -73,9 +79,9 @@ def callback_img(data):
   res = cv2.bitwise_and(frame,frame, mask= mask)
   array = np.array(res[:, :, 2])
   tri = np.argwhere(array > 0)
-
+  
   if tri.size != 0:
-    target = [np.mean(tri[0]), np.mean(tri[1])]
+    target = [np.mean(tri[:,0]), np.mean(tri[:,1])]
   else : 
     target = [0, 0]
   blimp.target = target
@@ -118,31 +124,31 @@ if __name__ == "__main__":
 
   subscriber_pos_camera = rospy.Subscriber("/camera", Vector3, callback_pos_camera)
   subscriber_pos_head = rospy.Subscriber("/head", Vector3, callback_pos_head)
-  publisher_dist = rospy.Publisher("/dist_head", Float64)
-  publisher_target = rospy.Publisher("/pos_target", Float64MultiArray)
+  publisher_dist = rospy.Publisher("/dist_head", Float64, queue_size=1)
+  publisher_target = rospy.Publisher("/pos_target", Float64MultiArray, queue_size=1)
 
-  publisher_speed = rospy.Publisher("/speed_blimp", Float64MultiArray)
+  publisher_speed = rospy.Publisher("/speed_blimp", Float64MultiArray, queue_size=20)
   r = rospy.Rate(10)
 
   while not rospy.is_shutdown():
-      # actualise Blimp with Euler method
-      blimp.actualise()
+    # actualise Blimp with Euler method
+    blimp.actualise()
 
-      # publish the speed for vrep
-      speed_msg = Float64MultiArray()
-      speed_msg.layout = MultiArrayLayout()
-      speed_msg.data = blimp.speed + [blimp.speed_yaw]
-      publisher_speed.publish(speed_msg)
+    # publish the speed for vrep
+    speed_msg = Float64MultiArray()
+    speed_msg.layout = MultiArrayLayout()
+    speed_msg.data = blimp.speed + [blimp.speed_yaw]
+    publisher_speed.publish(speed_msg)
 
-      # publish distance of camera to head for control
-      dist_msg = Float64()
-      dist_msg.data = np.sqrt((blimp.pos_head[0] - blimp.pos_cam[0])**2 + (blimp.pos_head[1] - blimp.pos_cam[1])**2 + (blimp.pos_head[2] - blimp.pos_cam[2])**2)
-      publisher_dist.publish(dist_msg)
+    # publish distance of camera to head for control
+    dist_msg = Float64()
+    dist_msg.data = np.sqrt((blimp.pos_head[0] - blimp.pos_cam[0])**2 + (blimp.pos_head[1] - blimp.pos_cam[1])**2 + (blimp.pos_head[2] - blimp.pos_cam[2])**2)
+    publisher_dist.publish(dist_msg)
 
-      # publish position of head in the image
-      target_msg = Float64MultiArray()
-      target_msg.layout = MultiArrayLayout()
-      target_msg.data = blimp.target + blimp.size_img
-      publisher_target.publish(target_msg)
+    # publish position of head in the image
+    target_msg = Float64MultiArray()
+    target_msg.layout = MultiArrayLayout()
+    target_msg.data = blimp.target + blimp.size_img
+    publisher_target.publish(target_msg)
 
-      r.sleep()
+    r.sleep()

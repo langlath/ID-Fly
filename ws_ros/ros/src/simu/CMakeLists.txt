@@ -166,7 +166,8 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
  catkin_install_python(PROGRAMS
-   scripts/simple_publisher.py scripts/simple_subscriber.py scripts/vrep_interm.py
+   scripts/simple_publisher.py scripts/simple_subscriber.py scripts/vrep_interm.py 
+   scripts/control.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
