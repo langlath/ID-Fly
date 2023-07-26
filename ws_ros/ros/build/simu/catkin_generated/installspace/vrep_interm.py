@@ -35,6 +35,7 @@ class Blimp:
 
     self.Dvx = 0.5
     self.Dvy = 0.5
+    self.Dvz = 0.5
     self.Dpsi = 0.5
     self.m = 0.6
 

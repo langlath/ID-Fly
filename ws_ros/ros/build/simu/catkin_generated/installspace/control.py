@@ -12,10 +12,12 @@ import numpy as np
 class Camera:
     def __init__(self, resol=[0, 0], hfov=69, vfov=55):
         self.size_img = resol
-        self.pos_target = [0, 0]
+        self.pos_target = (0, 0)
         self.dist = 0
-        self.hfov = hfov * np.pi / 180
-        self.vfov = vfov * np.pi / 180
+        self.hfov = hfov
+        self.vfov = vfov
+        self.thetah = 0
+        self.thetav = 0
 
 class Blimp:
 
@@ -28,7 +30,7 @@ class Blimp:
 
         self.lis_waypoints = []
         self.camera = Camera()
-        self.perfect_dist = 0.5
+        self.perfect_dist = 0.8
 
         self.forward_command = 0
         self.alt_command = 0
@@ -62,36 +64,55 @@ class Blimp:
         self.theta += self.state[3] * self.dt
 
         cam = self.camera
-        thetav = (cam.pos_target[0] - cam.size_img[0]) * cam.vfov
-        thetah = (cam.pos_target[1] - cam.size_img[1]) * cam.hfov
-        self.x_target = cam.dist * np.cos(thetav) * np.cos(thetah)
-        self.y_target = -cam.dist * np.cos(thetav) * np.sin(thetah)
-        self.z_target = -cam.dist * np.sin(thetav) * np.cos(thetah)
+        cam.thetah = (cam.pos_target[1] - cam.size_img[1] / 2) / 133 * cam.hfov * np.pi / 180
+        cam.thetav = (cam.pos_target[0] - cam.size_img[0] / 2) / 100 * cam.vfov * np.pi / 180
+        print("thetah = ", cam.thetah * 180 / np.pi)
+        # print("thetav = ", thetav)
+        self.x_target = cam.dist * np.cos(cam.thetav) * np.cos(cam.thetah)
+        self.y_target = -cam.dist * np.cos(cam.thetav) * np.sin(cam.thetah)
+        self.z_target = -cam.dist * np.sin(cam.thetav) * np.cos(cam.thetah)
+        print("cam.dist = ", cam.dist)
+        # print("self.x_target = ", self.x_target)
+        # print("self.x_target should be ", cam.dist * np.cos(thetav) * np.cos(thetah))
     
     def control(self):
-        X = np.array([self.state]).T
-        B = np.array([[-self.Dvx / self.m * self.state[0] - self.state[1] * self.state[3]],
-                      [-self.Dvy / self.m * self.state[1] + self.state[0] * self.state[3]],
-                      [-self.Dvz / self.m * self.state[2]],
-                      [-self.Dpsi / self.Iz * self.state[3]]])
-        w = self.array([[-self.perfect_dist, 0, 0, 0]]).t
-        dw = ddw = self.zeros((4, 1))
-        Xint = np.array([[-self.x_target, -self.y_target, -self.z_target, self.theta]])
-        V = (w - Xint) + 0.4 * (dw - X) + ddw
-        U = np.linalg.inv(A) @ (V - B)
-        self.forward_command = U[0, 0]
-        self.side_top_command = U[0, 1]
-        self.side_bottom_command = U[0, 2]
-        self.alt_command = U[0, 3]
+        print("pos_target = ", self.camera.pos_target)
+        print("size_img = ", self.camera.size_img)
+        if self.camera.pos_target != (0, 0) : 
+            X = np.array([self.state]).T
+            B = np.array([[-self.Dvx / self.m * self.state[0] - self.state[1] * self.state[3]],
+                        [-self.Dvy / self.m * self.state[1] + self.state[0] * self.state[3]],
+                        [-self.Dvz / self.m * self.state[2]],
+                        [-self.Dpsi / self.Iz * self.state[3]]])
+            w = np.array([[-self.perfect_dist * np.cos(np.pi / 9), 0, self.perfect_dist * np.sin(np.pi / 9), -self.camera.thetah]]).T
+            dw = ddw = np.zeros((4, 1))
+            Xint = np.array([[-self.x_target, -self.y_target, -self.z_target, 0]]).T
+            print("Xobj = ", w.T)
+            print("Xint = ", Xint.T)
+
+            V = (w - Xint) + 2 * (dw - X) + ddw
+            U = np.linalg.inv(self.A) @ (V - B)
+            print("command is ", U.T)
+
+            self.forward_command = U[0, 0]
+            self.side_top_command = U[1, 0]
+            self.side_bottom_command = U[2, 0]
+            self.alt_command = U[3, 0]
+        else : 
+            self.forward_command = 0
+            self.side_top_command = 1
+            self.side_bottom_command = 1
+            self.alt_command = 0
+        # print('theta command is ', self.side_top_command + self.side_bottom_command)
 
 
 def callback_dist(msg):
-    novabot.dist = msg.data
+    novabot.camera.dist = msg.data
     
 
 def callback_pos_target(msg):
-    novabot.pos_target = msg.data[0:2]
-    novabot.size_img = msg.data[2:4]
+    novabot.camera.pos_target = msg.data[0:2]
+    novabot.camera.size_img = msg.data[2:4]
 
 if __name__ == "__main__":
     novabot = Blimp()
@@ -108,6 +129,10 @@ if __name__ == "__main__":
     r = rospy.Rate(10)
 
     while not rospy.is_shutdown():
+
+        # actualise blimp
+        novabot.actualise_speed()
+        novabot.control()
 
         # publish propeller commands
         forw_msg = Float64()

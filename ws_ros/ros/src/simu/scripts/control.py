@@ -10,7 +10,8 @@ import time
 import numpy as np
 
 class Camera:
-    def __init__(self, resol=[0, 0], hfov=69, vfov=55):
+    def __init__(self, orient=np.pi/6, resol=[0, 0], hfov=69, vfov=55):
+        self.orient = orient
         self.size_img = resol
         self.pos_target = (0, 0)
         self.dist = 0
@@ -84,9 +85,12 @@ class Blimp:
                         [-self.Dvy / self.m * self.state[1] + self.state[0] * self.state[3]],
                         [-self.Dvz / self.m * self.state[2]],
                         [-self.Dpsi / self.Iz * self.state[3]]])
-            w = np.array([[-self.perfect_dist, 0, 0, -self.camera.thetah]]).T
+            w = np.array([[-self.perfect_dist * np.cos(self.camera.orient), 0, self.perfect_dist * np.sin(self.camera.orient), -self.camera.thetah]]).T
             dw = ddw = np.zeros((4, 1))
-            Xint = np.array([[-self.x_target, -self.y_target, -self.z_target, 0]]).T
+            Xint = np.array([[-self.x_target * np.cos(self.camera.orient) - self.z_target * np.sin(self.camera.orient)], 
+                             [-self.y_target], 
+                             [-self.z_target * np.cos(self.camera.orient) + self.x_target * np.sin(self.camera.orient)], 
+                             [0]])
             print("Xobj = ", w.T)
             print("Xint = ", Xint.T)
 
