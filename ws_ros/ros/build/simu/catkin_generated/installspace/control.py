@@ -9,8 +9,12 @@ from geometry_msgs.msg import Vector3
 import time
 import numpy as np
 
+import os
+import matplotlib.pyplot as plt
+
 class Camera:
-    def __init__(self, resol=[0, 0], hfov=69, vfov=55):
+    def __init__(self, orient=np.pi/6, resol=[0, 0], hfov=69, vfov=55):
+        self.orient = orient
         self.size_img = resol
         self.pos_target = (0, 0)
         self.dist = 0
@@ -30,7 +34,8 @@ class Blimp:
 
         self.lis_waypoints = []
         self.camera = Camera()
-        self.perfect_dist = 0.8
+        self.perfect_dist = 0.5
+        self.lis_err = []
 
         self.forward_command = 0
         self.alt_command = 0
@@ -43,6 +48,7 @@ class Blimp:
         self.Dpsi = 0.5
         self.m = 0.6
         self.Iz = 0.5
+        self.L = 0.5
 
         self.k_f = 1
         self.k_st = 1
@@ -52,7 +58,7 @@ class Blimp:
         self.A =  np.array([[self.k_f, 0,         0,          0       ], 
                             [0,        self.k_st, -self.k_sb, 0       ],
                             [0,        0,         0,          self.k_a],
-                            [0,        self.k_st, self.k_sb,  0       ]])
+                            [0,        self.m * self.L / (2 * self.Iz) * self.k_st, self.m * self.L / (2 * self.Iz) * self.k_sb,  0       ]])
 
         self.dt = 0.1
 
@@ -60,21 +66,30 @@ class Blimp:
         self.state[0] = self.state[0] + (self.forward_command * self.k_f - self.Dvx / self.m * self.state[0] + self.state[3] * self.state[1]) * self.dt
         self.state[1] +=  (self.side_top_command * self.k_st - self.side_bottom_command * self.k_sb - self.Dvy / self.m * self.state[1] - self.state[3] * self.state[0]) * self.dt
         self.state[2] += (self.alt_command * self.k_a - self.Dvz / self.m * self.state[2]) * self.dt
-        self.state[3] += (self.side_top_command * self.k_st + self.side_bottom_command * self.k_sb - self.Dpsi * self.state[3]) * self.dt
+        self.state[3] += (self.m * self.L / (2 * self.Iz) * (self.side_top_command * self.k_st + self.side_bottom_command * self.k_sb) - self.Dpsi / self.Iz * self.state[3]) * self.dt
         self.theta += self.state[3] * self.dt
 
         cam = self.camera
         cam.thetah = (cam.pos_target[1] - cam.size_img[1] / 2) / 133 * cam.hfov * np.pi / 180
         cam.thetav = (cam.pos_target[0] - cam.size_img[0] / 2) / 100 * cam.vfov * np.pi / 180
         print("thetah = ", cam.thetah * 180 / np.pi)
-        # print("thetav = ", thetav)
         self.x_target = cam.dist * np.cos(cam.thetav) * np.cos(cam.thetah)
         self.y_target = -cam.dist * np.cos(cam.thetav) * np.sin(cam.thetah)
         self.z_target = -cam.dist * np.sin(cam.thetav) * np.cos(cam.thetah)
         print("cam.dist = ", cam.dist)
-        # print("self.x_target = ", self.x_target)
-        # print("self.x_target should be ", cam.dist * np.cos(thetav) * np.cos(thetah))
+
     
+    def actualise_err(self):
+        alpha = self.camera.orient
+        w = [-self.perfect_dist * np.cos(alpha) + 0.3, 0, self.perfect_dist * np.sin(alpha), -self.camera.thetah]
+        pos = [-self.x_target * np.cos(alpha) - self.z_target * np.sin(alpha) + 0.3, -self.y_target, -self.z_target * np.cos(alpha) + self.x_target * np.sin(alpha), 0]
+        err_square = 0
+        for i in range(len(w) - 1):
+            err_square += (w[i] - pos[i])**2
+        err = np.sqrt(err_square)
+        # theta_err = np.abs(self.camera.thetah)
+        self.lis_err.append(err)
+
     def control(self):
         print("pos_target = ", self.camera.pos_target)
         print("size_img = ", self.camera.size_img)
@@ -84,9 +99,12 @@ class Blimp:
                         [-self.Dvy / self.m * self.state[1] + self.state[0] * self.state[3]],
                         [-self.Dvz / self.m * self.state[2]],
                         [-self.Dpsi / self.Iz * self.state[3]]])
-            w = np.array([[-self.perfect_dist * np.cos(np.pi / 9), 0, self.perfect_dist * np.sin(np.pi / 9), -self.camera.thetah]]).T
+            w = np.array([[-self.perfect_dist * np.cos(self.camera.orient) + 0.3, 0, self.perfect_dist * np.sin(self.camera.orient), -self.camera.thetah]]).T
             dw = ddw = np.zeros((4, 1))
-            Xint = np.array([[-self.x_target, -self.y_target, -self.z_target, 0]]).T
+            Xint = np.array([[-self.x_target * np.cos(self.camera.orient) + 0.3 - self.z_target * np.sin(self.camera.orient)], 
+                             [-self.y_target], 
+                             [-self.z_target * np.cos(self.camera.orient) + self.x_target * np.sin(self.camera.orient)], 
+                             [0]])
             print("Xobj = ", w.T)
             print("Xint = ", Xint.T)
 
@@ -103,7 +121,6 @@ class Blimp:
             self.side_top_command = 1
             self.side_bottom_command = 1
             self.alt_command = 0
-        # print('theta command is ', self.side_top_command + self.side_bottom_command)
 
 
 def callback_dist(msg):
@@ -115,6 +132,8 @@ def callback_pos_target(msg):
     novabot.camera.size_img = msg.data[2:4]
 
 if __name__ == "__main__":
+    t = 0
+    lis_t = [t]
     novabot = Blimp()
     rospy.init_node('control')  
 
@@ -131,6 +150,7 @@ if __name__ == "__main__":
     while not rospy.is_shutdown():
 
         # actualise blimp
+        novabot.actualise_err()
         novabot.actualise_speed()
         novabot.control()
 
@@ -151,5 +171,18 @@ if __name__ == "__main__":
         alt_msg.data = novabot.alt_command
         publisher_alt_prop.publish(alt_msg)
 
+        # save error historic
+        plt.plot(lis_t, novabot.lis_err)
+        plt.xlabel("time (s)")
+        plt.xticks(range(int(t)))
+        plt.ylabel("error (m)")
+        plt.yticks([i / 2 for i in range(8)])
+        plt.title(" error evolution with PID")
+        plt.grid(True)
+        plt.savefig(os.getcwd() + "/src/simu/figures/error.png")
+
+        
+        t += novabot.dt
+        lis_t.append(t)
         r.sleep()
 

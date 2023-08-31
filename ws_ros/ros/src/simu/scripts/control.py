@@ -48,6 +48,7 @@ class Blimp:
         self.Dpsi = 0.5
         self.m = 0.6
         self.Iz = 0.5
+        self.L = 0.5
 
         self.k_f = 1
         self.k_st = 1
@@ -57,7 +58,7 @@ class Blimp:
         self.A =  np.array([[self.k_f, 0,         0,          0       ], 
                             [0,        self.k_st, -self.k_sb, 0       ],
                             [0,        0,         0,          self.k_a],
-                            [0,        self.k_st, self.k_sb,  0       ]])
+                            [0,        self.m * self.L / (2 * self.Iz) * self.k_st, self.m * self.L / (2 * self.Iz) * self.k_sb,  0       ]])
 
         self.dt = 0.1
 
@@ -65,7 +66,7 @@ class Blimp:
         self.state[0] = self.state[0] + (self.forward_command * self.k_f - self.Dvx / self.m * self.state[0] + self.state[3] * self.state[1]) * self.dt
         self.state[1] +=  (self.side_top_command * self.k_st - self.side_bottom_command * self.k_sb - self.Dvy / self.m * self.state[1] - self.state[3] * self.state[0]) * self.dt
         self.state[2] += (self.alt_command * self.k_a - self.Dvz / self.m * self.state[2]) * self.dt
-        self.state[3] += (self.side_top_command * self.k_st + self.side_bottom_command * self.k_sb - self.Dpsi * self.state[3]) * self.dt
+        self.state[3] += (self.m * self.L / (2 * self.Iz) * (self.side_top_command * self.k_st + self.side_bottom_command * self.k_sb) - self.Dpsi / self.Iz * self.state[3]) * self.dt
         self.theta += self.state[3] * self.dt
 
         cam = self.camera
@@ -86,6 +87,7 @@ class Blimp:
         for i in range(len(w) - 1):
             err_square += (w[i] - pos[i])**2
         err = np.sqrt(err_square)
+        # theta_err = np.abs(self.camera.thetah)
         self.lis_err.append(err)
 
     def control(self):
@@ -175,7 +177,7 @@ if __name__ == "__main__":
         plt.xticks(range(int(t)))
         plt.ylabel("error (m)")
         plt.yticks([i / 2 for i in range(8)])
-        plt.title("error evolution with PID")
+        plt.title(" error evolution with PID")
         plt.grid(True)
         plt.savefig(os.getcwd() + "/src/simu/figures/error.png")
 

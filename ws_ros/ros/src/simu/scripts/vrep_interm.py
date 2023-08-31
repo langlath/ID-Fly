@@ -38,6 +38,7 @@ class Blimp:
     self.Dvz = 0.5
     self.Dpsi = 0.5
     self.m = 0.6
+    self.Iz = 0.5
 
     self.dt = 0.1
 
@@ -46,7 +47,7 @@ class Blimp:
     self.speed[0] = self.speed[0] + (self.forward_prop * self.k_f - self.Dvx / self.m * self.speed[0] - self.speed_yaw * self.speed[1]) * self.dt
     self.speed[1] = self.speed[1] + (self.side_top_prop * self.k_st - self.side_bottom_prop * self.k_sb - self.Dvy / self.m * self.speed[1] + self.speed_yaw * self.speed[0]) * self.dt
     self.speed[2] = self.speed[2] + (self.alt_prop * self.k_a - self.Dvz / self.m * self.speed[2]) * self.dt
-    self.speed_yaw = self.speed_yaw + (self.side_top_prop * self.k_st + self.side_bottom_prop * self.k_sb - self.Dpsi * self.speed_yaw) * self.dt
+    self.speed_yaw = self.speed_yaw + (self.side_top_prop * self.k_st + self.side_bottom_prop * self.k_sb - self.Dpsi / self.Iz * self.speed_yaw) * self.dt
 
 
 def callback_img(data):
